@@ -5,8 +5,6 @@ const data = [ //creates an array [] AKA ordered list
     { name: "Dandy", kind: "Dog" }, // {} create an object AKA key:value pairs
     { name: "Koshi", kind: "Dog" },
     { name: "Bianca", kind: "Cat" },
-    { name: "Bianca", kind: "Cat" },
-    { name: "Bianca", kind: "Cat" },
     { name: "Finley", kind: "Cat" },
 ]; //end array
 
