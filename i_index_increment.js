@@ -2,7 +2,7 @@
 const citrus = ["lemon", "orange", "grapefruit", "yuzu"]; //FROM fetch DB API
 citrus.push("lime");//add at the end (index 4) //EXTRA CUSTOM USER INPUT
 
-let index = 0; //initializer
+let index = 0; //initializer offset/distance from 1st
 
 while (index < citrus.length) { //condition? repeats
     //do this if true
