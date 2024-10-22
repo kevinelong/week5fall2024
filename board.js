@@ -27,14 +27,18 @@ function printBoard(board){
             let value = board[r][c];
             rowOutput += value + " ";
         }
-        console.log(r, rowOutput);
+        textR = String(r)
+        if(textR.length < 2){
+            textR += " ";
+        }
+        console.log(textR, rowOutput);
     }
 }
 printBoard(board);
 
 //go board 19x19=361
-const rowCount = 9
-const colCount = 9
+const rowCount = 19
+const colCount = 19
 let goBoard = [] //array of rows
 
 for(let r = 0; r < rowCount; r++){
