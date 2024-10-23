@@ -8,10 +8,18 @@
 </head>
 
 <body>
-    <select id="airports" name="airports"></select>
+    <select id="airports" name="airports"><option value="?">Select an Airport</option></select>
+    <select id="states" name="states"><option>Select a State</option></select>
     <div id="code">?</div>
 </body>
 <script>
+    function optionFromObject(item, valueKey, displayKey){
+        let element = document.createElement("option");
+        element.value = item[valueKey];
+        element.innerText = item[displayKey];
+        return element;
+    }
+
     let airportList = [
         { code: "PDX", city: "PORTLAND" },
         { code: "SEA", city: "SEATTLE" },
@@ -21,11 +29,8 @@
 
     airportList = airportList.sort((a,b) => a.code < b.code ? -1 : 0);
 
-    for (airport of airportList) {
-        let element = document.createElement("option");
-        element.value = airport.code;
-        element.innerText = airport.city;
-        airports.appendChild(element)
+    for (let airport of airportList) {
+        airports.appendChild(optionFromObject(airport, "code", "city"))
     }
 
     airports.addEventListener("click", e => {
@@ -33,6 +38,15 @@
         code.innerText = e.target.value
     });
 
+    let stateList = [
+        { abrv: "OR", name: "OREGON" },
+        { abrv: "GA", name: "GEORGIA" },
+        { abrv: "FL", name: "FLORIDA" },
+    ];
+
+    for (let state of stateList) {
+        states.appendChild(optionFromObject(state, "abrv", "name"))
+    }
 
     // airports.innerHTML = `
     // <option value="CO">Colorado</option>
