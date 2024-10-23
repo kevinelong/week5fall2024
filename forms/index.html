@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="airports" name="airports"></select>
+    <div id="code">?</div>
+</body>
+<script>
+    let airportList = [
+        { code: "PDX", city: "PORTLAND" },
+        { code: "SEA", city: "SEATTLE" },
+        { code: "ATL", city: "ATLANTA" },
+        { code: "ORL", city: "ORLANDO" },
+    ];
+
+    airportList = airportList.sort((a,b) => a.code < b.code ? -1 : 0);
+
+    for (airport of airportList) {
+        let element = document.createElement("option");
+        element.value = airport.code;
+        element.innerText = airport.city;
+        airports.appendChild(element)
+    }
+
+    airports.addEventListener("click", e => {
+        console.log(e);
+        code.innerText = e.target.value
+    });
+
+
+    // airports.innerHTML = `
+    // <option value="CO">Colorado</option>
+    //     <option value="ME">Maine</option>
+    //     <option value="TX">Texas</option>
+    //     <option value="WA">Washington</option>
+    // `;
+</script>
+
+</html>
