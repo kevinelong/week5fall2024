@@ -8,9 +8,11 @@
 </head>
 
 <body>
+    <div id="putItHere"></div>
     <select id="airports" name="airports"><option value="?">Select an Airport</option></select>
     <select id="states" name="states"><option>Select a State</option></select>
     <div id="code">?</div>
+    <textarea>Now is the time for all good people...</textarea>
 </body>
 <script>
     function optionFromObject(item, valueKey, displayKey){
@@ -35,7 +37,7 @@
 
     airports.addEventListener("click", e => {
         console.log(e);
-        code.innerText = e.target.value
+        code.innerText = e.target.value;
     });
 
     let stateList = [
@@ -54,6 +56,11 @@
     //     <option value="TX">Texas</option>
     //     <option value="WA">Washington</option>
     // `;
+
+    let p = document.createElement("p");
+    p.innerText = "howdy";
+    document.body.appendChild(p);
+    // putItHere.appendChild(p);
 </script>
 
 </html>
