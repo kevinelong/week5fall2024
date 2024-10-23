@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <style>
+        div{ 
+            border: 1px solid white;
+            background-color: darkred; 
+            color: yellow;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script src="./game.js"></script>
+</head>
+<body>
+    Game
+</body>
+<script>
+document.body.style.backgroundColor = "green";
+
+function showList(list) {
+        for (let i = 0; i < list.length; i++) {
+            let sprite = list[i];
+            const div = document.createElement("div");
+            div.innerText = sprite.name;
+            div.style.left = sprite.position.x + "rem";
+            div.style.top = sprite.position.y + "rem";
+            if(sprite.kind === "wizard"){
+                div.style.backgroundColor = "purple";
+            }
+            document.body.appendChild(div);
+        }
+    }
+    let lee = spriteList[0]; // first one i our hero
+    lee.position.x = 5;
+    showList(spriteList)
+</script>
+
+</html>
